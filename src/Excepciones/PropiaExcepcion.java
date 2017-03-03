@@ -6,7 +6,7 @@ public class PropiaExcepcion {
 			throws ExcepcionIntervalo, NumberFormatException, ArithmeticException {
 		int num = Integer.parseInt(str1);
 		int den = Integer.parseInt(str2);
-		if ((num > 100) || (den < -5)) {
+		if ((num > 100 || num < -5) || (den > 100 || den < -5)  ) {
 			throw new ExcepcionIntervalo("Números fuera del intervalo");
 		}
 		return (num / den);
@@ -19,10 +19,10 @@ public class PropiaExcepcion {
 		 *  b) Caracter no válido
 		 *  c) Número fuera de rango [-5,100]
 		 */
-		String str1 = "101";
-		String str2 = "2";
+		String str1 = "100";
+		String str2 = "0";
 		String respuesta;
-		int numerador, denominador, cociente;
+		int cociente;
 		try {
 			cociente = calcular(str1, str2);
 			respuesta = String.valueOf(cociente);
@@ -35,7 +35,6 @@ public class PropiaExcepcion {
 		}
 		System.out.println("La respuesta es: " + respuesta);
 	}
-
 }
 
  class ExcepcionIntervalo extends Exception {
