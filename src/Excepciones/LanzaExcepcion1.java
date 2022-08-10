@@ -12,5 +12,4 @@ public class LanzaExcepcion1 {
 		miPrograma.metodoExcepcion();
 		System.out.println("Este mensaje no se imprime porque el programa se para");
 	}
-
 }
